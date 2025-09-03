@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://whvp8kknts41"
+path="res://.godot/imported/detail-parasol-a.obj-df67489771f2a1730816d672909cf9a5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail-parasol-a.obj-df67489771f2a1730816d672909cf9a5.mesh"]
+
+source_file="res://Assets/world_test/kenney_city-kit-commercial_20/Models/OBJ format/detail-parasol-a.obj"
+dest_files=["res://.godot/imported/detail-parasol-a.obj-df67489771f2a1730816d672909cf9a5.mesh", "res://.godot/imported/detail-parasol-a.obj-df67489771f2a1730816d672909cf9a5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://vlrx2swgc13d"]
+
+[ext_resource type="PackedScene" uid="uid://beu7n66usdsst" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-a.glb" id="1_gtnyj"]
+[ext_resource type="PackedScene" uid="uid://b41t13g7vpdw6" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-b.glb" id="2_jl47o"]
+[ext_resource type="PackedScene" uid="uid://bjumlqoak4m2d" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-c.glb" id="3_13adn"]
+[ext_resource type="PackedScene" uid="uid://dcxeln3pj6dqv" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-d.glb" id="4_i678x"]
+[ext_resource type="PackedScene" uid="uid://bgrfy3luxu3gf" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-e.glb" id="5_fha2h"]
+[ext_resource type="PackedScene" uid="uid://qe1tdkv5jqdm" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-f.glb" id="6_8v8ro"]
+[ext_resource type="PackedScene" uid="uid://cl5ps2p8lv143" path="res://Assets/world_test/kenney_city-kit-commercial_20/Models/GLB format/building-g.glb" id="7_vhs4p"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="building-a2" parent="." instance=ExtResource("1_gtnyj")]
+
+[node name="building-b2" parent="." instance=ExtResource("2_jl47o")]
+
+[node name="building-c2" parent="." instance=ExtResource("3_13adn")]
+
+[node name="building-d2" parent="." instance=ExtResource("4_i678x")]
+
+[node name="building-e2" parent="." instance=ExtResource("5_fha2h")]
+
+[node name="building-f2" parent="." instance=ExtResource("6_8v8ro")]
+
+[node name="building-g2" parent="." instance=ExtResource("7_vhs4p")]

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://okjkuiaxwqhh"
+path="res://.godot/imported/low-detail-building-j.obj-f77a9842f1f48c23e135694f8a6b02f8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/low-detail-building-j.obj-f77a9842f1f48c23e135694f8a6b02f8.mesh"]
+
+source_file="res://Assets/world_test/kenney_city-kit-commercial_20/Models/OBJ format/low-detail-building-j.obj"
+dest_files=["res://.godot/imported/low-detail-building-j.obj-f77a9842f1f48c23e135694f8a6b02f8.mesh", "res://.godot/imported/low-detail-building-j.obj-f77a9842f1f48c23e135694f8a6b02f8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

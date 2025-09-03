@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpwod1gvqhhue"]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_emn7t"]
+[ext_resource type="Texture2D" uid="uid://dhriq27br6fbn" path="res://Assets/fixed_knife_and_regen_animation.png" id="2_3ws1q"]
+[ext_resource type="Script" path="res://scenes/player/spring_arm_3d.gd" id="3_n02er"]
+[ext_resource type="PackedScene" uid="uid://b7y0r57y4deqx" path="res://scenes/UI/Menu.tscn" id="4_nc4yb"]
+[ext_resource type="PackedScene" uid="uid://c0o0eoc0tyjqf" path="res://scenes/UI/health_bar.tscn" id="5_6b5aw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ule1h"]
+radius = 0.0982438
+height = 0.235614
+
+[sub_resource type="Animation" id="Animation_alvti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dwssm"]
+resource_name = "walk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0001, 0.3, 0.633333, 1.1, 1.4, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ppn2"]
+_data = {
+"RESET": SubResource("Animation_alvti"),
+"walk": SubResource("Animation_dwssm")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7y67d"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_emn7t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ule1h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00345727, 0.00513321, -0.000833809)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_3ws1q")
+hframes = 8
+vframes = 8
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5ppn2")
+}
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.936238, 0.351368, 0, -0.351368, 0.936238, 0.0669706, 0.435907, 0.517908)
+shape = SubResource("SphereShape3D_7y67d")
+script = ExtResource("3_n02er")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0710186, -0.000221267, -0.000407279)
+
+[node name="menu" parent="." instance=ExtResource("4_nc4yb")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health_bar" parent="CanvasLayer" instance=ExtResource("5_6b5aw")]
+
+[node name="HealthRegenTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="HealthRegenTimer" to="." method="_on_health_regen_timer_timeout"]
