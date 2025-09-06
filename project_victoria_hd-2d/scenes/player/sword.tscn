@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5wfxueye8wye"]
+
+[ext_resource type="Script" path="res://scripts/player/actionbattle/sword.gd" id="1_1j531"]
+[ext_resource type="Texture2D" uid="uid://8f2abgrlmqbf" path="res://Assets/general and crap/prototypesword.png" id="2_gd6rg"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_1j531")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.68259, 5.44033)
+texture = ExtResource("2_gd6rg")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Sprite3D"]
+polygon = PackedVector2Array(7.08886, -25.729, 7.1358, 42.5752, -5.95528, 48.25, -7.24851, -25.0595)
