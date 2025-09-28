@@ -1,15 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw4vnlw83rcqm"]
+[gd_scene load_steps=5 format=3 uid="uid://cw4vnlw83rcqm"]
 
 [ext_resource type="PackedScene" uid="uid://b8xxkscfr1jy" path="res://scenes/turnbased_battle_scenes/ships/battle_ship_test_scene.tscn" id="1_3hwl3"]
 [ext_resource type="MeshLibrary" uid="uid://ckcgday3g0f07" path="res://scenes/turnbased_battle_scenes/enviroment/ressources/test.tres" id="1_4oovx"]
-[ext_resource type="Script" path="res://scripts/player/battleships/battle_ship_test.gd" id="3_mbx6n"]
+[ext_resource type="Script" path="res://scripts/turn_based_combat/gridmanager.gd" id="1_rrf4d"]
+[ext_resource type="Script" path="res://scripts/turn_based_combat/character_placement.gd" id="3_jca1h"]
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_rrf4d")
+
+[node name="mesh_manager" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 1.50996e-07, -6.18329e-21, -6.60024e-15, 4.37114e-08, 1, 1.50996e-07, -1, 4.37114e-08, 8.2, 10, 7.1)
+fov = 79.0
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_4oovx")
 cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(1, 2, 0, 0, 2, 0, 65533, 2, 0)
+}
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="CharacterBody3D" parent="GridMap" instance=ExtResource("1_3hwl3")]
-script = ExtResource("3_mbx6n")
+[node name="characters" type="Node3D" parent="."]
+script = ExtResource("3_jca1h")
+
+[node name="player_1" parent="characters" instance=ExtResource("1_3hwl3")]

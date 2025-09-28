@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8j1fqnxft8tl"]
+
+[ext_resource type="Script" path="res://scripts/turn_based_combat/GridTile.gd" id="1_mmtrs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ilbg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gb8mn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_un6rr"]
+
+[node name="Tile" type="Node3D"]
+transform = Transform3D(1.8, 0, 0, 0, 0.3, 0, 0, 0, 1.728, -1, 0, 0)
+script = ExtResource("1_mmtrs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.555556, 0, 0)
+mesh = SubResource("BoxMesh_6ilbg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.555556, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_gb8mn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_un6rr")
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

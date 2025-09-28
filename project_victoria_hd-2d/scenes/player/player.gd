@@ -30,6 +30,7 @@ func _ready() -> void:
 	health_bar.init_health(health)
 
 func _physics_process(delta: float) -> void:
+	print(health)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 

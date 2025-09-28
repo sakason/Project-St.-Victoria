@@ -1,22 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8xxkscfr1jy"]
 
-[ext_resource type="Texture2D" uid="uid://db7hk3kp5qgx" path="res://Assets/general and crap/harold-03.jpg" id="1_jr8lo"]
+[ext_resource type="Texture2D" uid="uid://8f2abgrlmqbf" path="res://Assets/general and crap/prototypesword.png" id="1_21aix"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ule1h"]
 radius = 0.0982438
 height = 0.235614
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ule1h")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00345727, 0.00513321, -0.000833809)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.00345727, 0.00513321, -0.000833809)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
-texture = ExtResource("1_jr8lo")
+texture = ExtResource("1_21aix")
 hframes = 8
 vframes = 8
 frame = 3
